@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		C797E14E1BAB764400D2808F /* PageMenuFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = C797E14D1BAB764400D2808F /* PageMenuFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C797E1581BAB765100D2808F /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C797E1441BAB754600D2808F /* CAPSPageMenu.swift */; };
+		D2E83EB01FA2109F00FB6EAE /* CAPSPageMenu+UIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E83EAA1FA2109E00FB6EAE /* CAPSPageMenu+UIConfiguration.swift */; };
+		D2E83EB11FA2109F00FB6EAE /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E83EAB1FA2109E00FB6EAE /* MenuItemView.swift */; };
+		D2E83EB21FA2109F00FB6EAE /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E83EAC1FA2109E00FB6EAE /* CAPSPageMenu+UIScrollViewDelegate.swift */; };
+		D2E83EB31FA2109F00FB6EAE /* CAPSPageMenu+Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E83EAD1FA2109E00FB6EAE /* CAPSPageMenu+Options.swift */; };
+		D2E83EB41FA2109F00FB6EAE /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E83EAE1FA2109F00FB6EAE /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */; };
+		D2E83EB51FA2109F00FB6EAE /* CAPSPageMenuConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E83EAF1FA2109F00FB6EAE /* CAPSPageMenuConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +23,12 @@
 		C797E14B1BAB764400D2808F /* PageMenuFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PageMenuFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C797E14D1BAB764400D2808F /* PageMenuFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PageMenuFramework.h; sourceTree = "<group>"; };
 		C797E14F1BAB764400D2808F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2E83EAA1FA2109E00FB6EAE /* CAPSPageMenu+UIConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIConfiguration.swift"; sourceTree = "<group>"; };
+		D2E83EAB1FA2109E00FB6EAE /* MenuItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		D2E83EAC1FA2109E00FB6EAE /* CAPSPageMenu+UIScrollViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIScrollViewDelegate.swift"; sourceTree = "<group>"; };
+		D2E83EAD1FA2109E00FB6EAE /* CAPSPageMenu+Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+Options.swift"; sourceTree = "<group>"; };
+		D2E83EAE1FA2109F00FB6EAE /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAPSPageMenu+UIGestureRecognizerDelegate.swift"; sourceTree = "<group>"; };
+		D2E83EAF1FA2109F00FB6EAE /* CAPSPageMenuConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenuConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,12 @@
 		C797E1431BAB754600D2808F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D2E83EAD1FA2109E00FB6EAE /* CAPSPageMenu+Options.swift */,
+				D2E83EAA1FA2109E00FB6EAE /* CAPSPageMenu+UIConfiguration.swift */,
+				D2E83EAE1FA2109F00FB6EAE /* CAPSPageMenu+UIGestureRecognizerDelegate.swift */,
+				D2E83EAC1FA2109E00FB6EAE /* CAPSPageMenu+UIScrollViewDelegate.swift */,
+				D2E83EAF1FA2109F00FB6EAE /* CAPSPageMenuConfiguration.swift */,
+				D2E83EAB1FA2109E00FB6EAE /* MenuItemView.swift */,
 				C797E1441BAB754600D2808F /* CAPSPageMenu.swift */,
 			);
 			name = Classes;
@@ -155,6 +173,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C797E1581BAB765100D2808F /* CAPSPageMenu.swift in Sources */,
+				D2E83EB51FA2109F00FB6EAE /* CAPSPageMenuConfiguration.swift in Sources */,
+				D2E83EB21FA2109F00FB6EAE /* CAPSPageMenu+UIScrollViewDelegate.swift in Sources */,
+				D2E83EB31FA2109F00FB6EAE /* CAPSPageMenu+Options.swift in Sources */,
+				D2E83EB11FA2109F00FB6EAE /* MenuItemView.swift in Sources */,
+				D2E83EB01FA2109F00FB6EAE /* CAPSPageMenu+UIConfiguration.swift in Sources */,
+				D2E83EB41FA2109F00FB6EAE /* CAPSPageMenu+UIGestureRecognizerDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
