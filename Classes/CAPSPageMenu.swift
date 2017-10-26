@@ -33,7 +33,7 @@ open class CAPSPageMenu: UIViewController {
     
     // MARK: - Properties
 
-    let menuScrollView = UIScrollView()
+    public let menuScrollView = UIScrollView()
     let controllerScrollView = UIScrollView()
     var controllerArray : [UIViewController] = []
     var menuItems : [MenuItemView] = []
@@ -70,6 +70,13 @@ open class CAPSPageMenu: UIViewController {
         case left
         case right
         case other
+    }
+    
+    public func getControllerAtIndex(_ index: Int) -> UIViewController? {
+        guard controllerArray.isEmpty == false && index >= 0 && index < controllerArray.count else {
+            return nil
+        }
+        return controllerArray[index]
     }
 
     // MARK: - View life cycle
