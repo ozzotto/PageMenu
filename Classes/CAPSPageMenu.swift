@@ -190,7 +190,13 @@ extension CAPSPageMenu {
                     }
                 }
                 
-                self.selectionIndicatorView.frame = CGRect(x: selectionIndicatorX, y: self.selectionIndicatorView.frame.origin.y, width: selectionIndicatorWidth, height: self.selectionIndicatorView.frame.height)
+                if self.configuration.useOverlayStyleSelectionIndicator && !self.configuration.centerMenuItems {
+                    let paddingX = self.configuration.overlayStyleSelectionIndicatorPaddingX
+                    let paddingY = self.configuration.overlayStyleSelectionIndicatorPaddingY
+                    self.selectionIndicatorView.frame = CGRect(x: selectionIndicatorX - paddingX, y: paddingY, width: selectionIndicatorWidth + 2 * paddingX, height: self.configuration.menuHeight - 2 * paddingY)
+                } else {
+                    self.selectionIndicatorView.frame = CGRect(x: selectionIndicatorX, y: self.selectionIndicatorView.frame.origin.y, width: selectionIndicatorWidth, height: self.selectionIndicatorView.frame.height)
+                }
                 
                 // Switch newly selected menu item title label to selected color and old one to unselected color
                 if self.menuItems.count > 0 {
@@ -254,7 +260,14 @@ extension CAPSPageMenu {
                 // Resize selectionIndicator bar
                 let selectionIndicatorX : CGFloat = CGFloat(currentPageIndex) * (self.view.frame.width / CGFloat(self.controllerArray.count))
                 let selectionIndicatorWidth : CGFloat = self.view.frame.width / CGFloat(self.controllerArray.count)
-                selectionIndicatorView.frame =  CGRect(x: selectionIndicatorX, y: self.selectionIndicatorView.frame.origin.y, width: selectionIndicatorWidth, height: self.selectionIndicatorView.frame.height)
+                
+                if configuration.useOverlayStyleSelectionIndicator {
+                    let paddingX = self.configuration.overlayStyleSelectionIndicatorPaddingX
+                    let paddingY = self.configuration.overlayStyleSelectionIndicatorPaddingY
+                    selectionIndicatorView.frame = CGRect(x: selectionIndicatorX - paddingX, y: paddingY, width: selectionIndicatorWidth + 2 * paddingX, height: configuration.menuHeight - 2 * paddingY)
+                } else {
+                    selectionIndicatorView.frame =  CGRect(x: selectionIndicatorX, y: self.selectionIndicatorView.frame.origin.y, width: selectionIndicatorWidth, height: self.selectionIndicatorView.frame.height)
+                }
                 
                 // Resize menu items
                 var index : Int = 0
@@ -274,7 +287,14 @@ extension CAPSPageMenu {
                 }
                 
                 let selectionIndicatorX : CGFloat = self.configuration.menuItemWidth * CGFloat(currentPageIndex) + self.configuration.menuMargin * CGFloat(currentPageIndex + 1) + self.startingMenuMargin
-                selectionIndicatorView.frame =  CGRect(x: selectionIndicatorX, y: self.selectionIndicatorView.frame.origin.y, width: self.selectionIndicatorView.frame.width, height: self.selectionIndicatorView.frame.height)
+                
+                if configuration.useOverlayStyleSelectionIndicator {
+                    let paddingX = self.configuration.overlayStyleSelectionIndicatorPaddingX
+                    let paddingY = self.configuration.overlayStyleSelectionIndicatorPaddingY
+                    selectionIndicatorView.frame = CGRect(x: selectionIndicatorX - paddingX, y: paddingY, width: self.selectionIndicatorView.frame.width + 2 * paddingX, height: configuration.menuHeight - 2 * paddingY)
+                } else {
+                    selectionIndicatorView.frame =  CGRect(x: selectionIndicatorX, y: self.selectionIndicatorView.frame.origin.y, width: self.selectionIndicatorView.frame.width, height: self.selectionIndicatorView.frame.height)
+                }
                 
                 // Recalculate frame for menu items if centered
                 var index : Int = 0

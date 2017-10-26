@@ -44,4 +44,9 @@ public enum CAPSPageMenuOption {
     case scrollAnimationDurationOnMenuItemTap(Int)
     case centerMenuItems(Bool)
     case hideTopMenuBar(Bool)
+    case useOverlayStyleSelectionIndicator(Bool)
+    case overlayStyleSelectionIndicatorColor(UIColor)
+    case overlayStyleSelectionIndicatorCornerRadius(CGFloat)
+    case overlayStyleSelectionIndicatorPaddingX(CGFloat)
+    case overlayStyleSelectionIndicatorPaddingY(CGFloat)
 }

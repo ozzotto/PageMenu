@@ -60,6 +60,16 @@ extension CAPSPageMenu {
                 configuration.centerMenuItems = value
             case let .hideTopMenuBar(value):
                 configuration.hideTopMenuBar = value
+            case let .useOverlayStyleSelectionIndicator(value):
+                configuration.useOverlayStyleSelectionIndicator = value
+            case let .overlayStyleSelectionIndicatorColor(value):
+                configuration.overlayStyleSelectionIndicatorColor = value
+            case let .overlayStyleSelectionIndicatorCornerRadius(value):
+                configuration.overlayStyleSelectionIndicatorCornerRadius = value
+            case let .overlayStyleSelectionIndicatorPaddingX(value):
+                configuration.overlayStyleSelectionIndicatorPaddingX = value
+            case let .overlayStyleSelectionIndicatorPaddingY(value):
+                configuration.overlayStyleSelectionIndicatorPaddingY = value
             }
         }
         
@@ -232,7 +242,16 @@ extension CAPSPageMenu {
         // Configure selection indicator view
         var selectionIndicatorFrame : CGRect = CGRect()
         
-        if configuration.useMenuLikeSegmentedControl {
+        if configuration.useOverlayStyleSelectionIndicator {
+            let paddingX = configuration.overlayStyleSelectionIndicatorPaddingX
+            let paddingY = configuration.overlayStyleSelectionIndicatorPaddingY
+            let width = configuration.menuItemWidthBasedOnTitleTextWidth ? menuItemWidths[0] : (self.view.frame.width / CGFloat(controllerArray.count))
+            if configuration.centerMenuItems  {
+                selectionIndicatorFrame = CGRect(x: startingMenuMargin + configuration.menuMargin, y: paddingY, width: configuration.menuItemWidth, height: configuration.menuHeight - 2 * paddingY)
+            } else {
+                selectionIndicatorFrame = CGRect(x: configuration.menuMargin - paddingX, y: paddingY, width: width + 2 * paddingX, height: configuration.menuHeight - 2 * paddingY)
+            }
+        } else if configuration.useMenuLikeSegmentedControl {
             selectionIndicatorFrame = CGRect(x: 0.0, y: configuration.menuHeight - configuration.selectionIndicatorHeight, width: self.view.frame.width / CGFloat(controllerArray.count), height: configuration.selectionIndicatorHeight)
         } else if configuration.menuItemWidthBasedOnTitleTextWidth {
             selectionIndicatorFrame = CGRect(x: configuration.menuMargin, y: configuration.menuHeight - configuration.selectionIndicatorHeight, width: menuItemWidths[0], height: configuration.selectionIndicatorHeight)
@@ -246,7 +265,14 @@ extension CAPSPageMenu {
         
         selectionIndicatorView = UIView(frame: selectionIndicatorFrame)
         selectionIndicatorView.backgroundColor = configuration.selectionIndicatorColor
+        if configuration.useOverlayStyleSelectionIndicator {
+            selectionIndicatorView.backgroundColor = configuration.overlayStyleSelectionIndicatorColor
+            selectionIndicatorView.layer.cornerRadius = configuration.overlayStyleSelectionIndicatorCornerRadius
+        }
         menuScrollView.addSubview(selectionIndicatorView)
+        if configuration.useOverlayStyleSelectionIndicator {
+            menuScrollView.sendSubview(toBack: selectionIndicatorView)
+        }
     }
 }
 

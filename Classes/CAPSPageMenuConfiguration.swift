@@ -35,6 +35,12 @@ public class CAPSPageMenuConfiguration {
     open var enableHorizontalBounce : Bool = true
     open var hideTopMenuBar : Bool = false
     
+    open var useOverlayStyleSelectionIndicator : Bool = false
+    open var overlayStyleSelectionIndicatorColor : UIColor = .clear
+    open var overlayStyleSelectionIndicatorCornerRadius : CGFloat = 8.0
+    open var overlayStyleSelectionIndicatorPaddingX : CGFloat = 0.0
+    open var overlayStyleSelectionIndicatorPaddingY : CGFloat = 0.0
+    
     public init() {
         
     }
