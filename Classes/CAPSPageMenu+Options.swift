@@ -49,4 +49,5 @@ public enum CAPSPageMenuOption {
     case overlayStyleSelectionIndicatorCornerRadius(CGFloat)
     case overlayStyleSelectionIndicatorPaddingX(CGFloat)
     case overlayStyleSelectionIndicatorPaddingY(CGFloat)
+    case menuItemsAccessibilityLabels([Int: String])
 }

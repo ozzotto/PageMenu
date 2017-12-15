@@ -70,6 +70,11 @@ class MenuItemView: UIView {
             self.titleLabel!.text = "Menu \(Int(index) + 1)"
         }
         
+        let indexInt = Int(index)
+        if let label = pageMenu.configuration.menuItemsAccessibilityLabels[indexInt] {
+            accessibilityLabel = label
+        }
+        
         // Add separator between menu items when using as segmented control
         if pageMenu.configuration.useMenuLikeSegmentedControl {
             if Int(index) < pageMenu.controllerArray.count - 1 {

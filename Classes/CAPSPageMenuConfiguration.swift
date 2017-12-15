@@ -41,6 +41,8 @@ public class CAPSPageMenuConfiguration {
     open var overlayStyleSelectionIndicatorPaddingX : CGFloat = 0.0
     open var overlayStyleSelectionIndicatorPaddingY : CGFloat = 0.0
     
+    open var menuItemsAccessibilityLabels: [Int: String] = [Int: String]()
+    
     public init() {
         
     }
