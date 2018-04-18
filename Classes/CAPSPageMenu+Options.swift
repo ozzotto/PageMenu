@@ -50,4 +50,5 @@ public enum CAPSPageMenuOption {
     case overlayStyleSelectionIndicatorPaddingX(CGFloat)
     case overlayStyleSelectionIndicatorPaddingY(CGFloat)
     case menuItemsAccessibilityLabels([Int: String])
+    case menuItemsAccessibilityIdentifiers([Int: String])
 }

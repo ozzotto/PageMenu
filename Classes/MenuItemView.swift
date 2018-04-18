@@ -74,6 +74,9 @@ class MenuItemView: UIView {
         if let label = pageMenu.configuration.menuItemsAccessibilityLabels[indexInt] {
             accessibilityLabel = label
         }
+        if let identifier = pageMenu.configuration.menuItemsAccessibilityIdentifiers[indexInt] {
+            accessibilityIdentifier = identifier
+        }
         
         // Add separator between menu items when using as segmented control
         if pageMenu.configuration.useMenuLikeSegmentedControl {

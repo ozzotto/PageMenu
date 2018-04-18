@@ -72,6 +72,8 @@ extension CAPSPageMenu {
                 configuration.overlayStyleSelectionIndicatorPaddingY = value
             case let .menuItemsAccessibilityLabels(value):
                 configuration.menuItemsAccessibilityLabels = value
+            case let .menuItemsAccessibilityIdentifiers(value):
+                configuration.menuItemsAccessibilityIdentifiers = value
             }
         }
         
