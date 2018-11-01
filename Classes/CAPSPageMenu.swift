@@ -24,6 +24,7 @@ import UIKit
 
     @objc optional func willMoveToPage(_ controller: UIViewController, index: Int)
     @objc optional func didMoveToPage(_ controller: UIViewController, index: Int)
+    @objc optional func didTapMenuItem(_ controller: UIViewController?, index: Int)
 }
 
 open class CAPSPageMenu: UIViewController {
@@ -351,7 +352,7 @@ extension CAPSPageMenu {
      
      - parameter index: Index of the page to move to
      */
-    open func moveToPage(_ index: Int, animated: Bool = true) {
+    open func moveToPage(_ index: Int, animated: Bool = true, completion: (() -> Void)? = nil) {
         if index >= 0 && index < controllerArray.count {
             // Update page if changed
             if index != currentPageIndex {
@@ -389,9 +390,12 @@ extension CAPSPageMenu {
                 let duration : Double = Double(configuration.scrollAnimationDurationOnMenuItemTap) / Double(1000)
                 UIView.animate(withDuration: duration, animations: { () -> Void in
                     setControllerScrollViewContentOffset(index)
+                }, completion: { (_) in
+                    completion?()
                 })
             } else {
                 setControllerScrollViewContentOffset(index)
+                completion?()
             }
         }
     }

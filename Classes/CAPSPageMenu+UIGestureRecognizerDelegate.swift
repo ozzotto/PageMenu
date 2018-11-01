@@ -47,6 +47,8 @@ extension CAPSPageMenu : UIGestureRecognizerDelegate {
             }
             
             if itemIndex >= 0 && itemIndex < controllerArray.count {
+                delegate?.didTapMenuItem?(getControllerAtIndex(itemIndex), index: itemIndex)
+
                 // Update page if changed
                 if itemIndex != currentPageIndex {
                     startingPageForScroll = itemIndex
