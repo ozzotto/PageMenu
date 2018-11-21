@@ -199,7 +199,7 @@ extension CAPSPageMenu {
                     }
                 }
                 
-                if self.configuration.useOverlayStyleSelectionIndicator {
+                if self.configuration.useOverlayStyleSelectionIndicator && !self.configuration.centerMenuItems {
 
                     let paddingX = self.configuration.overlayStyleSelectionIndicatorPaddingX
                     let paddingY = self.configuration.overlayStyleSelectionIndicatorPaddingY
