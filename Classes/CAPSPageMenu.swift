@@ -198,7 +198,7 @@ extension CAPSPageMenu {
                     }
                 }
                 
-                if self.configuration.useOverlayStyleSelectionIndicator && !self.configuration.centerMenuItems {
+                if self.configuration.useOverlayStyleSelectionIndicator {
                     let paddingX = self.configuration.overlayStyleSelectionIndicatorPaddingX
                     let paddingY = self.configuration.overlayStyleSelectionIndicatorPaddingY
                     self.selectionIndicatorView.frame = CGRect(x: selectionIndicatorX - paddingX, y: paddingY, width: selectionIndicatorWidth + 2 * paddingX, height: self.configuration.menuHeight - 2 * paddingY)
