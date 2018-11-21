@@ -199,9 +199,19 @@ extension CAPSPageMenu {
                 }
                 
                 if self.configuration.useOverlayStyleSelectionIndicator {
+
                     let paddingX = self.configuration.overlayStyleSelectionIndicatorPaddingX
                     let paddingY = self.configuration.overlayStyleSelectionIndicatorPaddingY
-                    self.selectionIndicatorView.frame = CGRect(x: selectionIndicatorX - paddingX, y: paddingY, width: selectionIndicatorWidth + 2 * paddingX, height: self.configuration.menuHeight - 2 * paddingY)
+
+                    var width: CGFloat = selectionIndicatorWidth + 2 * paddingX
+                    let height: CGFloat = self.configuration.menuHeight - 2 * paddingY
+
+                    if self.configuration.menuItemWidthBasedOnTitleTextWidth {
+                        width = self.menuItemWidths[pageIndex] + 2 * paddingX
+                    }
+
+                    self.selectionIndicatorView.frame = CGRect(x: selectionIndicatorX - paddingX, y: paddingY, width: width, height: height)
+
                 } else {
                     self.selectionIndicatorView.frame = CGRect(x: selectionIndicatorX, y: self.selectionIndicatorView.frame.origin.y, width: selectionIndicatorWidth, height: self.selectionIndicatorView.frame.height)
                 }
