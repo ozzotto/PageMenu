@@ -203,14 +203,18 @@ extension CAPSPageMenu {
                     let paddingX = self.configuration.overlayStyleSelectionIndicatorPaddingX
                     let paddingY = self.configuration.overlayStyleSelectionIndicatorPaddingY
 
-                    var width: CGFloat = self.selectionIndicatorView.frame.width + 2 * paddingX
                     let height: CGFloat = self.configuration.menuHeight - 2 * paddingY
 
+                    var frame = self.selectionIndicatorView.frame
+                    frame.origin.x = (selectionIndicatorX - paddingX)
+                    frame.origin.y = paddingY
+                    frame.size.height = height
+
                     if self.configuration.menuItemWidthBasedOnTitleTextWidth {
-                        width = self.menuItemWidths[pageIndex] + 2 * paddingX
+                        frame.size.width = self.menuItemWidths[pageIndex] + 2 * paddingX
                     }
 
-                    self.selectionIndicatorView.frame = CGRect(x: selectionIndicatorX - paddingX, y: paddingY, width: width, height: height)
+                    self.selectionIndicatorView.frame = frame
 
                 } else {
                     self.selectionIndicatorView.frame = CGRect(x: selectionIndicatorX, y: self.selectionIndicatorView.frame.origin.y, width: selectionIndicatorWidth, height: self.selectionIndicatorView.frame.height)
