@@ -212,6 +212,8 @@ extension CAPSPageMenu {
 
                     if self.configuration.menuItemWidthBasedOnTitleTextWidth {
                         frame.size.width = self.menuItemWidths[pageIndex] + 2 * paddingX
+                    } else {
+                        frame.size.width = selectionIndicatorWidth + 2 * paddingX
                     }
 
                     self.selectionIndicatorView.frame = frame
