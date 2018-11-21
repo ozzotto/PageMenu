@@ -186,10 +186,6 @@ extension CAPSPageMenu {
                     selectionIndicatorWidth = self.menuItemWidths[pageIndex]
                     selectionIndicatorX += self.configuration.menuMargin
 
-                    if self.configuration.centerMenuItems {
-                        selectionIndicatorX += self.startingMenuMargin
-                    }
-                    
                     if pageIndex > 0 {
                         for i in 0...(pageIndex - 1) {
                             selectionIndicatorX += (self.configuration.menuMargin + self.menuItemWidths[i])
