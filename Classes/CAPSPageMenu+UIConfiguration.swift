@@ -103,7 +103,7 @@ extension CAPSPageMenu {
         self.view.addConstraints(controllerScrollView_constraint_V)
         
         // Set up menu scroll view
-        menuScrollView.translatesAutoresizingMaskIntoConstraints = false
+        //menuScrollView.translatesAutoresizingMaskIntoConstraints = false
         
         menuScrollView.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: configuration.menuHeight)
         
